@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지후의 포트폴리오</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main_style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <!-- GSAP 및 ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4cc28289f9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./img/favicon-96x96.png" type="image/x-icon" />
+    <script src="js/main.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- 전체gnb메뉴 -->
+      <div class="full_gnb">
+        <div class="gnb_inner">
+          <ul class="menu_list">
+            <li><a href="#aboutme">ABOUT ME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- //full_gnb -->
+      <div class="main">
+        <header>
+          <nav><a href="#" class="menu_btn">MENU</a></nav>
+        </header>
+        <div class="video_wrap">
+          <video autoplay muted loop id="bgvideo">
+            <source src="img/aboutme_videocut.mp4" type="video/mp4" />
+          </video>
+          <div class="video_overlay"></div>
+        </div>
+        <div class="main_txt">
+          <h3>Portfolio<br />안녕하세요<br />전지후입니다.</h3>
+        </div>
+      </div>
+      <!-- //main -->
+      <section id="aboutme"></section>
+      <section id="aboutme_2"></section>
+      <section id="aboutme_card">
+        <div class="Container">
+          <!-- last card -->
+          <div class="Picture" id="animalCard">
+            <img class="Picture-img" src="./img/animal.png" alt="" />
+            <div class="Picture-note"><span>MY FRIEND</span></div>
+          </div>
+          <!-- other cards -->
+          <div class="Picture" id="schoolCard">
+            <img class="Picture-img" src="./img/school.png" alt="school" />
+            <div class="Picture-note"><span>SCHOOL</span></div>
+          </div>
+          <div class="Picture" id="historyCard">
+            <img class="Picture-img" src="./img/history.png" alt="" />
+            <div class="Picture-note"><span>HISTORY</span></div>
+          </div>
+          <div class="Picture" id="habbyCard">
+            <img class="Picture-img" src="./img/hobby.png" alt="" />
+            <div class="Picture-note"><span>HOBBY</span></div>
+          </div>
+          <div class="Picture" id="familyCard">
+            <img class="Picture-img" src="./img/family.png" alt="" />
+            <div class="Picture-note"><span>FAMILY</span></div>
+          </div>
+          <div class="Picture" id="meCard">
+            <img class="Picture-img" src="./img/me.png" alt="me!" />
+            <div class="Picture-note">
+              <span>ME!</span>
+            </div>
+          </div>
+        </div>
+        <!-- //Container -->
+      </section>
+      <section id="aboutme_me">
+        <div id="me">
+          <button class="popup_close_btn">X</button>
+          <div class="me_esset">
+            <img src="img/me_picture.png" alt="" />
+            <p>ME!</p>
+            <img src="img/me_esset2.png" alt="" class="shake" />
+          </div>
+          <div class="me_txt">
+            <p>이름 : 전지후</p>
+            <p>나이 : 1999년생 🐰토끼띠</p>
+            <p>이메일 : iamjeehoo@gmail.com</p>
+            <p>취미 : 독서📚</p>
+            <p>장점 : 긍정적인 마인드와 실행력💪</p>
+            <p>관심분야 : UI/UX디자인, 서비스 기획</p>
+            <p>한줄소개 : 디자인과 사용자경험 사이의 연결고리를 찾는 기획자</p>
+          </div>
+        </div>
+        <!-- //me -->
+      </section>
+      <div id="school">
+        <button class="popup_close_btn">X</button>
+        <div class="school_txt">
+          <h2>나의 학창시절</h2>
+          <h4>떠든사람<br />최율희</h4>
+        </div>
+        <div class="school_esset">
+          <img src="img/school_esset.png" alt="학교 아이콘그림" />
+          <img src="img/paper.png" alt="종이" />
+          <img src="img/paper2.png" alt="종이" />
+          <img src="img/paper3.png" alt="종이" />
+          <img src="img/school_img.png" alt="" />
+        </div>
+        <div class="schoo_img">
+          <img src="img/crape_1.png" alt="" />
+          <img src="img/crape_2.png" alt="" />
+          <img src="img/crape_3.png" alt="" />
+          <img src="img/crape_4.png" alt="" />
+          <img src="img/crape_5.png" alt="" />
+        </div>
+      </div>
+      <!-- //school -->
+
+      <!-- 히스토리 -->
+      <div id="history" class="wrapper">
+        <button class="popup_close_btn">X</button>
+
+        <section id="timeline">
+          <h1>나의 히스토리</h1>
+
+          <div class="demo-card-wrapper">
+            <div class="demo-card demo-card--step1">
+              <div class="head">
+                <div class="number-box">
+                  <span>01</span>
+                </div>
+                <h2><span class="small">1999</span>Since</h2>
+              </div>
+              <div class="body">
+                <p>
+                  미술 선생님인 어머님의 영향으로 자연스럽게 예술과 창의적인
+                  감각을 익혔습니다.
+                </p>
+                <img src="./img/born.jpg" alt="Graphic" />
+              </div>
+            </div>
+
+            <div class="demo-card demo-card--step2">
+              <div class="head">
+                <div class="number-box">
+                  <span>02</span>
+                </div>
+                <h2><span class="small">2017</span>Kensington Jeju Hotel</h2>
+              </div>
+              <div class="body">
+                <p>
+                  19살, 사회생활을 가장 먼저 시작한 공간입니다. 고객응대와 예약,
+                  매출관리를 경험하며 서비스의 본질과 사용자 흐름에 대해
+                  체득했습니다.
+                </p>
+                <img src="./img/kensington.png" alt="Graphic" />
+              </div>
+            </div>
+
+            <div class="demo-card demo-card--step3">
+              <div class="head">
+                <div class="number-box">
+                  <span>03</span>
+                </div>
+                <h2><span class="small">2020</span>Haevichi Country Club</h2>
+              </div>
+              <div class="body">
+                <p>
+                  VIP고객을 응대하며 정교한 커뮤니케이션 스킬과 매출관리 경험을
+                  쌓았습니다. 반복되는 데이터 속에서 패턴을 읽고 문제를 개선하는
+                  감각을 키웠습니다.
+                </p>
+                <img src="./img/haevichi.jpg" alt="Graphic" />
+              </div>
+            </div>
+
+            <div class="demo-card demo-card--step4">
+              <div class="head">
+                <div class="number-box">
+                  <span>04</span>
+                </div>
+                <h2><span class="small">2020</span>Wolfgang Steakhouse</h2>
+              </div>
+              <div class="body">
+                <p>
+                  예약관리부터 고객응대, 매출분석까지 직접 총괄하며 사용자
+                  경험이 브랜드 이미지에 어떻게 연결되는지를 현장에서
+                  배웠습니다. 고객의 여정을 설계하는 초기 UX감각이 자라난
+                  시기였습니다.
+                </p>
+                <img src="./img/wolfgang.jpg" alt="Graphic" />
+              </div>
+            </div>
+
+            <div class="demo-card demo-card--step5">
+              <div class="head">
+                <div class="number-box">
+                  <span>05</span>
+                </div>
+                <h2><span class="small">2022</span>Maldives Tanning</h2>
+              </div>
+              <div class="body">
+                <p>
+                  고객 응대부터 예약, 정산까지 일괄 운영하면서 사용자 흐름의
+                  전체 맥락을 처음부터 끝까지 파악해 본 경험. 현장 기반 서비스
+                  기획의 기본이 된 시간입니다.
+                </p>
+                <img src="./img/maldive.jpg" alt="Graphic" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="projects"></section>
+      <section id="projects_2">
+        <div class="circle_container">
+          <div class="circle">
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </section>
+      <section id="skills"></section>
+      <section id="skills_2">
+        <div class="circle_container">
+          <div class="circle">
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </section>
+      <section id="contact"></section>
+      <section id="contact_2"></section>
+      <section id="contact_3">
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        <div class="fish" id="fish3"></div>
+        <div class="contact_txt_wrap">
+          <div class="contact_item linkedin">
+            <a href="https://www.linkedin.com/in/iamjeehoo" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+              <p>LINKEDIN</p>
+            </a>
+          </div>
+          <div class="contact_item gmail">
+            <a href="">
+              <i class="fa-solid fa-envelope"></i>
+              <p>GMAIL</p>
+            </a>
+          </div>
+          <div class="contact_item instagram">
+            <a href="">
+              <i class="fa-brands fa-square-instagram"></i>
+              <p>INSTAGRAM</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- //contact_3 -->
+      <section id="final">
+        <h2>감사합니다!</h2>
+      </section>
+    </div>
+    <!-- //wrap -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKILLS</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/skills.css" />
+    <link rel="stylesheet" href="css/font.css" />
+  </head>
+
+  <body>
+    <section id="image-scroll">
+      <div id="wrapper">
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+      </div>
+    </section>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+      const imagePaths = [
+        "./img/css.svg",
+        "./img/excel.svg",
+        "./img/figma.svg",
+        "./img/han.svg",
+        "./img/html.svg",
+        "./img/Illustrator.svg",
+        "./img/notion.svg",
+        "./img/photoshop.svg",
+        "./img/word.svg",
+      ];
+
+      const n = document.querySelectorAll(".image");
+      const html = document.querySelector("html");
+
+      let wh = html.getBoundingClientRect().height;
+      let ww = html.getBoundingClientRect().width;
+
+      const initX = () => randomClamp(0, ww - 100);
+      const initY = () => randomClamp(0, wh - 100);
+
+      const randomColor = () =>
+        "#" +
+        ("000000" + Math.floor(Math.random() * 16777215).toString(16)).slice(
+          -6
+        );
+
+      const randomClamp = (min, max) =>
+        Math.floor(Math.random() * (+max - +min)) + +min;
+
+      const setPosition = (object, y, x, dx, dy, iRate) => {
+        iRate += 0.05;
+        x += dx;
+        y += dy;
+
+        const maxX = ww - object.offsetWidth;
+        const maxY = wh - object.offsetHeight;
+
+        if (x < 0 || x > maxX) dx = -dx;
+        if (y < 0 || y > maxY) dy = -dy;
+
+        object.style.cssText = `
+    transform: translate(${x}px, ${y}px);
+    background-image: ${object.style.backgroundImage};
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  `;
+
+        requestAnimationFrame(() => {
+          setPosition(object, y, x, dx, dy, iRate);
+        });
+      };
+
+      // 이미지 초기화 및 애니메이션 시작
+      n.forEach((item, index) => {
+        const startX = initX();
+        const startY = initY();
+
+        const dx = (Math.random() * 0.4 + 0.2) * (Math.random() > 0.5 ? 1 : -1);
+        const dy = (Math.random() * 0.4 + 0.2) * (Math.random() > 0.5 ? 1 : -1);
+
+        const bgImage = imagePaths[index % imagePaths.length];
+        item.style.backgroundImage = `url(${bgImage})`;
+
+        item.addEventListener("mouseover", () => {
+          item.style.zIndex = 1000;
+        });
+
+        item.addEventListener("mouseout", () => {
+          item.style.zIndex = index;
+        });
+
+        setPosition(item, startY, startX, dx, dy, 0);
+      });
+    </script>
+  </body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKILLS</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/skills.css" />
+    <link rel="stylesheet" href="css/font.css" />
+  </head>
+
+  <body>
+    <section id="image-scroll">
+      <div id="wrapper">
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+      </div>
+    </section>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+      const imagePaths = [
+        "./img/css.svg",
+        "./img/excel.svg",
+        "./img/figma.svg",
+        "./img/han.svg",
+        "./img/html.svg",
+        "./img/Illustrator.svg",
+        "./img/notion.svg",
+        "./img/photoshop.svg",
+        "./img/word.svg",
+        "./img/powerpoint.svg",
+        "./img/react.svg",
+        "./img/google.svg",
+      ];
+
+      const n = document.querySelectorAll(".image");
+      const html = document.querySelector("html");
+
+      let wh = html.getBoundingClientRect().height;
+      let ww = html.getBoundingClientRect().width;
+
+      const initX = () => randomClamp(0, ww - 100);
+      const initY = () => randomClamp(0, wh - 100);
+      const randomClamp = (min, max) =>
+        Math.floor(Math.random() * (+max - +min)) + +min;
+
+      const setPosition = (object, data) => {
+        if (data.paused) {
+          requestAnimationFrame(() => setPosition(object, data));
+          return;
+        }
+
+        data.x += data.dx;
+        data.y += data.dy;
+
+        const maxX = ww - object.offsetWidth;
+        const maxY = wh - object.offsetHeight;
+
+        if (data.x < 0 || data.x > maxX) data.dx = -data.dx;
+        if (data.y < 0 || data.y > maxY) data.dy = -data.dy;
+
+        object.style.transform = `translate(${data.x}px, ${data.y}px)`;
+        object.style.backgroundImage = `url(${data.bgImage})`;
+
+        requestAnimationFrame(() => setPosition(object, data));
+      };
+
+      // 이미지 초기화 및 애니메이션 시작
+      n.forEach((item, index) => {
+        const startX = initX();
+        const startY = initY();
+        const dx = (Math.random() * 0.4 + 0.2) * (Math.random() > 0.5 ? 1 : -1);
+        const dy = (Math.random() * 0.4 + 0.2) * (Math.random() > 0.5 ? 1 : -1);
+        const bgImage = imagePaths[index];
+
+        // 데이터 객체로 상태 관리
+        const data = {
+          x: startX,
+          y: startY,
+          dx,
+          dy,
+          paused: false,
+          bgImage,
+        };
+
+        item.style.backgroundSize = "contain";
+        item.style.backgroundRepeat = "no-repeat";
+        item.style.backgroundPosition = "center";
+
+        item.addEventListener("mouseover", () => {
+          item.style.zIndex = 1000;
+          data.paused = true;
+        });
+
+        item.addEventListener("mouseout", () => {
+          item.style.zIndex = index;
+          data.paused = false;
+        });
+
+        setPosition(item, data);
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 416d537 (0428)
